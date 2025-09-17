@@ -1,0 +1,60 @@
+[
+  {
+    "ContainingType": "BarcodeFinal.Controllers.ProductController",
+    "Method": "CreateProduct",
+    "RelativePath": "api/product",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productRequest",
+        "Type": "BarcodeFinal.Models.ProductRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarcodeFinal.Controllers.TemplateController",
+    "Method": "CreateTemplate",
+    "RelativePath": "api/template",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "templateRequest",
+        "Type": "BarcodeFinal.Models.TemplateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarcodeFinal.Controllers.TemplateController",
+    "Method": "GetTemplateById",
+    "RelativePath": "api/template/{referenceId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "referenceId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarcodeFinal.Controllers.TemplateController",
+    "Method": "GetAllTemplates",
+    "RelativePath": "api/template/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
