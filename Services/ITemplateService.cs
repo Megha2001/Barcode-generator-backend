@@ -7,5 +7,6 @@ namespace BarcodeFinal.Services
         public Template CreateTemplate(TemplateRequest templateRequest);
         public List<Template> GetAllTemplates();
         public Template GetTemplateById(string referenceId);
+        public void DeleteTemplate(string referenceId);
     }
 }

@@ -34,5 +34,12 @@ namespace BarcodeFinal.Controllers
             var data = templateService.CreateTemplate(templateRequest);
             return Ok(data);
         }
+
+        [HttpDelete("{referenceId}")]
+        public IActionResult DeleteTemplate(string referenceId)
+        {
+            templateService.DeleteTemplate(referenceId);
+            return Ok();
+        }
     }
 }
