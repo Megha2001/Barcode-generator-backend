@@ -19,11 +19,27 @@ namespace BarcodeFinal.Services
                 TemplateReferenceId = productRequest.TemplateReferenceId,
                 ProductId = productRequest.ProductId,
                 ProductDetails = productRequest.ProductDetails.GetRawText(),
-                CreatedAt = DateTime.UtcNow,
+                CreatedAt = DateTime.UtcNow
             };
             _context.Products.Add(product);
             _context.SaveChanges();
             return product;
+        }
+
+        public List<Product> CreateProducts(List<ProductRequest> productRequests)
+        {
+            var products = productRequests.Select(productRequest => new Product
+            {
+                ProductReferenceId = Guid.NewGuid(),
+                TemplateReferenceId = productRequest.TemplateReferenceId,
+                ProductId = productRequest.ProductId,
+                ProductDetails = productRequest.ProductDetails.GetRawText(),
+                CreatedAt = DateTime.UtcNow
+            }).ToList();
+
+            _context.Products.AddRange(products);
+            _context.SaveChanges();
+            return products;
         }
     }
 }

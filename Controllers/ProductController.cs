@@ -20,5 +20,12 @@ namespace BarcodeFinal.Controllers
             var data = productService.CreateProduct(productRequest);
             return Ok(data);
         }
+
+        [HttpPost("bulk")]
+        public IActionResult CreateProducts(List<ProductRequest> productRequests)
+        {
+            var data = productService.CreateProducts(productRequests);
+            return Ok(data);
+        }
     }
 }
