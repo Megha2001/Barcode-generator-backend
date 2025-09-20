@@ -1,4 +1,5 @@
-﻿using BarcodeFinal.Database;
+﻿using System.Text.Json;
+using BarcodeFinal.Database;
 using BarcodeFinal.Models;
 
 namespace BarcodeFinal.Services
@@ -18,7 +19,7 @@ namespace BarcodeFinal.Services
                 ProductReferenceId = Guid.NewGuid(),
                 TemplateReferenceId = productRequest.TemplateReferenceId,
                 ProductId = productRequest.ProductId,
-                ProductDetails = productRequest.ProductDetails.GetRawText(),
+                ProductDetails = JsonSerializer.Serialize(productRequest.ProductDetails),
                 CreatedAt = DateTime.UtcNow
             };
             _context.Products.Add(product);
@@ -33,7 +34,7 @@ namespace BarcodeFinal.Services
                 ProductReferenceId = Guid.NewGuid(),
                 TemplateReferenceId = productRequest.TemplateReferenceId,
                 ProductId = productRequest.ProductId,
-                ProductDetails = productRequest.ProductDetails.GetRawText(),
+                ProductDetails = JsonSerializer.Serialize(productRequest.ProductDetails),
                 CreatedAt = DateTime.UtcNow
             }).ToList();
 
